@@ -13,6 +13,8 @@ import (
 	"github.com/google/uuid"
 )
 
+const UPLOAD_DIR = "uploads"
+
 func RandomBase64Token() string {
 	const (
 		iterations = 3

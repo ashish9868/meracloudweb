@@ -23,7 +23,9 @@ type LoginDto struct {
 	Password string `json:"password"`
 }
 
-func Register(c *gin.Context) {
+type UserController struct{}
+
+func (u UserController) Register(c *gin.Context) {
 	var payload RegisterDto
 	c.ShouldBind(&payload)
 
@@ -61,7 +63,7 @@ func Register(c *gin.Context) {
 
 }
 
-func Login(c *gin.Context) {
+func (u UserController) Login(c *gin.Context) {
 	var payload LoginDto
 	c.ShouldBind(&payload)
 
@@ -100,7 +102,7 @@ func Login(c *gin.Context) {
 	c.JSON(http.StatusOK, user)
 }
 
-func Logout(c *gin.Context) {
+func (u UserController) Logout(c *gin.Context) {
 	user, ok := c.Get("user")
 
 	if ok {

@@ -1,3 +1,5 @@
 .env
 /vendor
 gorm.db
+.gitignore
+/uploads
